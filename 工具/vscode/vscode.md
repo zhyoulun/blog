@@ -4,6 +4,8 @@
 - On Mac 　　Shift + Option + F
 - On Ubuntu　　 Ctrl + Shift + I
 
+command+shift+P，查找format document，并执行
+
 ### 返回上一个光标
 
 - Windows: Alt + ← ;或者 鼠标侧键
@@ -16,3 +18,4 @@
 
 - [VSCode 代码格式化 快捷键](https://www.cnblogs.com/ryanzheng/p/10950870.html)
 - [VSCode 返回上一个光标 (上一个浏览位置)](https://blog.csdn.net/M_N_N/article/details/84581840)
+- [VS Code中代码格式化](https://www.jianshu.com/p/39a92e970657)

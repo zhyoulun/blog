@@ -17,11 +17,11 @@ struct ngx_module_s {
     const char           *signature;
     //----------------------
     //end
-    //---------------------- 
+    //----------------------
 
     void                 *ctx;
     ngx_command_t        *commands;
-    ngx_uint_t            type;//Nginx共有5中模块类型CORF、CONF、EVNT、HTTP、MAIL
+    ngx_uint_t            type;//Nginx共有5中模块类型CORF、CONF、EVENT、HTTP、MAIL
 
     // ngx_int_t           (*init_master)(ngx_log_t *log);//没有用；A hook into the initialisation of the master process；This hook has currently not been implemented
 

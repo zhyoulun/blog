@@ -6,16 +6,22 @@ services:
     nginx1:
         image: bitnami/nginx:1.20.1
         privileged: true
+        volumes:
+            - ./static/index1.html:/app/index.html
         # ports:
         #     - "8081:8080"
     nginx2:
         image: bitnami/nginx:1.20.1
         privileged: true
+        volumes:
+            - ./static/index2.html:/app/index.html
         # ports:
         #     - "8082:8080"
     nginx3:
         image: bitnami/nginx:1.20.1
         privileged: true
+        volumes:
+            - ./static/index3.html:/app/index.html
         # ports:
         #     - "8083:8080"
             

@@ -17,6 +17,7 @@ RUN apt-get update && \
     lsof \
     ffmpeg \
     iputils-ping \
-    host
+    host \
+    ipvsadm
 
 CMD ["/sbin/init"]

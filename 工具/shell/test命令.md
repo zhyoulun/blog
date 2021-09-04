@@ -20,12 +20,14 @@ zyl@mydev:~$ echo $?
               the length of STRING is zero
 ```
 
+```
 zyl@mydev:~$ test -n "abc"
 zyl@mydev:~$ echo $?
 0
 zyl@mydev:~$ test -n ""
 zyl@mydev:~$ echo $?
 1
+```
 
 ### 完整说明
 

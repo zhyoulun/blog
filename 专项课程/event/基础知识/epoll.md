@@ -1,6 +1,8 @@
 
 ### epoll
 
+如下代码是man文档中的介绍，不是完整的实现，完整的实现参考`helloworld/epoll.md`
+
 ```c
 #define MAX_EVENTS 10
 struct epoll_event ev, events[MAX_EVENTS];

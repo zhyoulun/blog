@@ -28,5 +28,15 @@ scrape_configs:
     static_configs:
     - targets: ['localhost:9090']
 
+# remote_write:
+#   - url: "http://prometheus-kafka-adapter:8080/receive"
+
+# remote_write:
+#   - url: http://prometheus-influxdb-adapter:9201/write
+# remote_read:
+#   - url: http://prometheus-influxdb-adapter:9201/read
+
 remote_write:
-  - url: "http://prometheus-kafka-adapter:8080/receive"
+  - url: http://influxdb:8086/api/v1/prom/write?u=my_user&p=my_password&db=prometheus
+remote_read:
+  - url: http://influxdb:8086/api/v1/prom/read?u=my_user&p=my_password&db=prometheus

@@ -100,6 +100,7 @@ GiB Swap:  0.0/7.999    [ ...
  
 ## 参考
 
+- [linuxtools-rst - top linux下的任务管理器](https://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/top.html)
 - [https://www.man7.org/linux/man-pages/man1/top.1.html](https://www.man7.org/linux/man-pages/man1/top.1.html)
 - [Scheduling in Linux](https://www.cs.montana.edu/~chandrima.sarkar/AdvancedOS/CSCI560_Proj_main/index.html)
 - [https://www.man7.org/linux/man-pages/man1/renice.1.html](https://www.man7.org/linux/man-pages/man1/renice.1.html)

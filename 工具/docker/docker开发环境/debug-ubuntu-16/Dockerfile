@@ -15,6 +15,9 @@ RUN apt-get update && \
     golang \
     openjdk-8-jdk \
     lsof \
+    iputils-ping \
+    dnsutils \
+    netcat \
     ffmpeg
 
 CMD ["/sbin/init"]

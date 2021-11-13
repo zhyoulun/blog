@@ -12,8 +12,18 @@ Deployment 是一个更高级的概念，它管理 ReplicaSet，并向 Pod 提�
 
 ### Deployments
 
+### Persistent Volume
+
+Volume是定义在Pod上的，属于“计算资源”的一部分，而实际上，“网络存储”是相对于“计算资源”而存在的一种实体资源。比如在使用虚拟机的情况下，我们通常会先定义一个网络存储，然后从中划出一个“网盘”并挂接到虚拟机上。Persistent Volume和与之相关联的Persistent Volume Claim也起到了类似的作用。
+
+PV可以理解为k8s集群中的某个网络存储中对应的一块存储，它与Volume类似，但有一下区别：
+
+- PV只能是网络存储，不属于任何Node，但可以在每个Node上访问
+- PV并不定义在Pod上，而是独立于Pod之外定义
 
 
+
+### 参考
 
 - pod
 - deployment

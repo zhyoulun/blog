@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: myweb
+spec:
+  type: NodePort # type=NodePort+nodePort=30001的两个属性，表明此Service开启了NodePort方式的外网访问模式。在k8s集群之外，可以通过30001这个端口访问myweb
+  ports:
+    - port: 8080
+      nodePort: 30001
+  selector:
+    app: myweb

@@ -1,5 +1,6 @@
 中文文档：https://kubernetes.io/zh/docs/home/
 英文文档：https://kubernetes.io/docs/home/
+reference API: https://kubernetes.io/docs/reference/kubernetes-api/
 
 
 单机版测试工具minikube：https://minikube.sigs.k8s.io/docs/start/

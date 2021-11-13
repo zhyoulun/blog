@@ -1,3 +1,4 @@
+### hello world
 - 创建一个新的空目录
 - 在空目录中执行`vagrant init ubuntu/xenial64 https://vagrantcloud.com/ubuntu/xenial64`，将会创建一个Vagrantfile
 - 执行`vagrant validate`文件内容是否是正确的
@@ -15,6 +16,13 @@ Vagrant.configure("2") do |config|
 end
 ```
 
+### 常用命令
+
+- vagrant up 开启
+- vagrant halt 关机
+- vagrant suspend 睡眠
+- vagrant reload --provision 重启vagrant机器，强制再次运行配置管理流程
+- vagrant destroy 删除
 ### 问题记录
 
 ```

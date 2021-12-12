@@ -1,10 +1,8 @@
 #!/bin/bash
-# 废弃
-# BASEDIR=$(dirname "$0")
-# ${BASEDIR}/master-1-os.sh
-# ${BASEDIR}/master-2-k8s.sh
 
 set -x
+
+
 
 ###################################
 # init
@@ -85,12 +83,7 @@ sudo apt-get update
 sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
 
-###################################
-# 初始化控制平台节点
-###################################
-sudo kubeadm init --image-repository registry.aliyuncs.com/google_containers
+######################################################################
 
-###################################
-# 安装 Pod 网络附加组件
-###################################
-sudo KUBECONFIG=/etc/kubernetes/admin.conf kubectl apply -f /vagrant_data/calico.yaml
+
+

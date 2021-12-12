@@ -41,13 +41,14 @@ Vagrant.configure("2") do |config|
   # config.vm.network "public_network"
   # 这个配置还有问题，需要排查
   # config.vm.network "public_network", bridge: "en0: Wi-Fi", ip:"192.168.0.121" # 路由器分配地址
+  # config.vm.network "public_network"
+  config.vm.network "public_network", ip:"192.168.0.121"
 
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
-  config.vm.synced_folder "./data", "/vagrant_data"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -65,8 +66,6 @@ Vagrant.configure("2") do |config|
   # information on available options.
   config.vm.provider "virtualbox" do |vb|
     vb.gui = true
-    vb.memory = 2048
-    vb.cpus = 4
   end
 
   # Enable provisioning with a shell script. Additional provisioners such as
@@ -77,10 +76,9 @@ Vagrant.configure("2") do |config|
   #   apt-get install -y apache2
   # SHELL
   config.vm.provision "shell", inline: <<-SHELL
+    sudo sed -i s@/archive.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list
+    sudo sed -i s@/security.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list
     sudo apt update
     sudo apt install -y nginx
   SHELL
-
-  # other
-  config.vm.hostname = "hello"
 end

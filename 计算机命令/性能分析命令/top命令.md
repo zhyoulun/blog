@@ -94,10 +94,12 @@ GiB Swap:  0.0/7.999    [ ...
 - c) is one of two visual graphs of those representations.
   - 图形化展示
 
+## 多核监控
+
+按数字1切换模式，可监控每个逻辑CPU的状况
 
 
-
- 
+sys
 ## 参考
 
 - [linuxtools-rst - top linux下的任务管理器](https://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/top.html)

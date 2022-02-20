@@ -84,7 +84,7 @@
 
 - “球形－凹面”表示法。采用这种表示法时，类元与提供的接口之间的实现依赖关系用一个圆（球形）来表示；而类元与必需接口之间的使用依赖关系用一个半圆（凹面）来表示。此表示法也称为外部视图。
 
-提供的接口（圆形）	
+提供的接口（圆形）
 
 ![](/static/images/2008/p006.gif)
 
@@ -97,4 +97,4 @@
 
 ## 参考
 
-- [组件](https://www.ibm.com/support/knowledgecenter/zh/SSCLKU_7.5.5/com.ibm.xtools.modeler.doc/topics/ccomp.html)
+- [组件](https://www.ibm.com/docs/zh/rsm/7.5.0?topic=diagrams-components)

@@ -43,4 +43,4 @@ ffprobe -show_format -of json input.aac
 
 - `-show_packets`：解码前的
 - `-show_frames`：解码后的
-
+- `-show_streams`：查看没个stream的信息，区分音频和视频

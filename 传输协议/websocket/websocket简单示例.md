@@ -1,0 +1,100 @@
+### server端代码
+
+```go
+package main
+
+import (
+	"github.com/gorilla/websocket"
+	"log"
+	"net/http"
+)
+
+var upgrade = websocket.Upgrader{}
+
+func echo(w http.ResponseWriter, r *http.Request) {
+	c, err := upgrade.Upgrade(w, r, nil)
+	if err != nil {
+		log.Print("upgrade: ", err)
+		return
+	}
+	defer c.Close()
+	for {
+		mt, message, err := c.ReadMessage()
+		if err != nil {
+			log.Println("read: ", err)
+			break
+		}
+		log.Printf("recv: %s", message)
+		err = c.WriteMessage(mt, message)
+		if err != nil {
+			log.Println("write: ", err)
+			break
+		}
+	}
+}
+
+func main() {
+	http.HandleFunc("/echo", echo)
+	log.Fatal(http.ListenAndServe(":8080", nil))
+}
+```
+
+### client端代码
+
+```go
+package main
+
+import (
+	"github.com/gorilla/websocket"
+	"log"
+	"net/url"
+	"sync"
+	"time"
+)
+
+func main() {
+	rawUrl := "ws://127.0.0.1:8080/echo"
+	u, err := url.Parse(rawUrl)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	c, _, err := websocket.DefaultDialer.Dial(u.String(), nil)
+	if err != nil {
+		log.Fatal("dial: ", err)
+	}
+	defer c.Close()
+
+	wg := &sync.WaitGroup{}
+	{
+		wg.Add(1)
+		go func(w *sync.WaitGroup) {
+			defer w.Done()
+			for {
+				message := []byte(time.Now().String())
+				err = c.WriteMessage(websocket.TextMessage, message)
+				if err != nil {
+					log.Fatal("write: ", err)
+				}
+				log.Printf("write: %s", message)
+				time.Sleep(time.Second)
+			}
+		}(wg)
+	}
+
+	{
+		wg.Add(1)
+		go func(w *sync.WaitGroup) {
+			defer w.Done()
+			for {
+				_, message, err := c.ReadMessage()
+				if err != nil {
+					log.Fatal("read: ", err)
+				}
+				log.Printf("receive: %s", message)
+			}
+		}(wg)
+	}
+	wg.Wait()
+}
+```

@@ -21,7 +21,7 @@ https://github.com/snail007/goproxy/blob/master/README_ZH.md
 
 - [SOCKS5 server in Golang](https://github.com/armon/go-socks5)
   - 一个比较简单的实现，可以用于辅助理解socks5协议
-  - fork版：https://github.com/zhyoulun/go-socks5
+  - 我的学习：https://github.com/zhyoulun/go-socks5
 - [SOCKS Protocol Version 5](https://datatracker.ietf.org/doc/html/rfc1928)
   - rfc协议
 - [socks5 协议详解](https://jiajunhuang.com/articles/2019_06_06-socks5.md.html)

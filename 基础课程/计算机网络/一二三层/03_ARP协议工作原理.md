@@ -1,8 +1,43 @@
-### ARP协议工作原理
+### ARP协议作用
 
 ARP协议能实现任意网络层地址到任意物理地址的转换，最常见的用途是从IP地址到以太网地址（MAC地址）的转换
 
-### 为什么每台电脑都要设置子网掩码?
+### ARP协议在路由器、交换机中的工作细节
+
+> 这里分析了在不同网段中两个机器之间的通信流程，也可以分析下在同一网段中两个机器之间的通信流程，后者更为简单，无论是PC0---Switch---P1还是PC0---Router---PC1
+
+假设有一个网络：PC0---Switch---Router---PC1，PC0需要向PC1发送ping探测，**PC0和PC1在不同的网段中**
+
+1. PC0开始发ping包给PC1，因为跨网段了，PC0需要先找到网关，经由网关给PC1发送数据，所以需要发送ARP包找网关的MAC地址
+   1. 发送方PC0发送ARP请求：源IP地址为PC0的IP地址，源MAC地址为PC0的MAC地址；目标IP地址为网关的地址，目标MAC地址为全F
+   2. Switch收到ARP请求包
+      1. Switch学习PC0的MAC地址和端口，记录到CAM表
+   3. Switch在CAM表中找不到PC0的网关，转发ARP请求到所有端口
+   4. Router收到ARP包
+      1. Router学习PC0的IP地址和MAC地址
+   5. Router响应ARP包：源IP地址为路由器接口IP，源MAC为路由器接口MAC，目标IP为PC0的IP，目标MAC为PC0的MAC
+   6. Switch收到ARP包
+      1. Switch学习Router的MAC地址和端口，记录到CAM表
+   7. Switch转发这个ARP到PC0
+   8. PC0获取到网关的MAC地址
+2. PC0发送ping包， 源IP是PC0的IP，源MAC为PC0的MAC，目的IP是PC1的IP，目标MAC为PC0网关的MAC
+3. ping包到达Switch，Switch转发到PC0网关，即Router
+4. ping包到达Router，Router查看自己的路由表，可以找到PC1的IP，但是没有PC1的MAC，无法将此包进行封装转发，封装失败，丢弃包；需要获取PC1的MAC
+   1. Router在连接PC1网段的接口发送ARP包：源IP地址是Router在PC1接口的IP地址，源MAC地址是Router上连接PC1接口的MAC地址，目标IP地址PC1的IP地址，目标MAC地址是全F
+   2. PC1 收到ARP包，发送响应，将自己的MAC地址返回给路由器
+   3. Router收到ARP响应
+      1. Router学习PC1的IP地址和MAC地址
+5. 此时，Switch和Router已经掌握了所有需要掌握的MAC地址
+6. 此时PC0发送第二个ping包，Switch可以转发到Router，Router也可以转发到PC1，并作出逆向的响应
+
+### 备忘
+
+- 交换机：可以看到MAC地址，了解每个MAC地址（链路层）和端口（物理层）之间的映射关系
+- 路由器：可以查看IP头部，了解每个IP地址（网络层）和MAC地址（链路层）之间的映射关系
+
+### 网段和掩码
+
+为什么每台电脑都要设置子网掩码?
 
 那先顺着题主的意思来，电脑不用网络掩码，我现在给你三个IP：
 
@@ -20,7 +55,8 @@ A与B通信应该没有问题，A可以通过ARP广播发现B的MAC地址，B也
 
 于是A通过24位掩码，计算网关的网段是10.1.1，和自己的网段一样，既然一样就可以发送ARP广播发现网关的MAC地址了（为什么？没有为什么，协议就是这么规定的），然后二层目的地MAC = 网关的MAC，目的IP = 8.8.8.8，这好像有点滑稽，二层与三层指示的目的地址并不一致，这就是三层代理的原理。然后网关就可以依据8.8.8.8来查询路由表，将包发到上游的Internet路由器上，最终到达目的地。
 
-### 测试
+
+### 一些测试
 
 查看arp缓存表
 
@@ -72,5 +108,6 @@ tcpdump: listening on enp0s8, link-type EN10MB (Ethernet), capture size 262144 b
 
 ## 参考
 
+- [路由器处理ARP包过程（ZZ）](https://blog.csdn.net/evenness/article/details/8855275)
 - [为什么每台电脑都要设置子网掩码?](https://www.zhihu.com/question/263438014/answer/277783704)
 - Linux高性能服务器编程

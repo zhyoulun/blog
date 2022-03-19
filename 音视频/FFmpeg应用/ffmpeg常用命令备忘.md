@@ -89,6 +89,21 @@ ffmpeg -i input.mp4 -vf "drawtext=fontsize=80:fontcolor=White:x=(w-tw)/2:y=th:te
 - -f fmt (input/output)
   - Force input or output file format. The format is normally auto detected for input files and guessed from the file extension for output files, so this option is not needed in most cases.
 
+## 生成纯色视频
+
+```bash
+ffmpeg -ss 0 -t 30 -f lavfi -i color=c=0x0000ff:s=1280x720:r=25 -vcodec libx264 -r:v 25 test.mp4
+```
+
+- `-t`：视频时长，30s
+- `-f`：Libavfilter input virtual device.
+- `-r`：帧率
+
+## 生成 纯色画面+白噪声 视频
+
+```
+ffmpeg -t 30 -f lavfi -i "color=c=0x0000ff:s=1280x720 [out0];aevalsrc=-2+random(0) [out1]" 1.mp4
+```
 
 ## 合并视频文件
 
@@ -304,3 +319,5 @@ Filters:
 - [和-movflags +faststart一起咬文嚼字](https://blog.csdn.net/liuzehn/article/details/105639620)
 - [MP4文件结构解析](https://blog.csdn.net/qq_25333681/article/details/93144167)
 - [ffmpeg给视频添加时间水印](https://blog.csdn.net/ternence_hsu/article/details/102540626)
+- [ffmpeg 生成单色测试视频](https://blog.csdn.net/ternence_hsu/article/details/90578565)
+- [FFmpeg生成静音音频和黑屏视频命令](https://blog.csdn.net/shaosunrise/article/details/122348369)

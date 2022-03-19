@@ -130,7 +130,49 @@ func main() {
 }
 ```
 
+## 需要注意的问题
+
+### MethodByName无法获取私有方法
+
+原因： MethodByName 方法实现中调用了私有的 exportedMethods （可导出）方法，就是说私有方法（不可导出）在 MethodByName 这个 API 中查不到。
+
+```go
+package main
+
+import (
+	"fmt"
+	"reflect"
+)
+
+type Person struct {
+}
+
+func (p *Person) Walk() {
+	fmt.Println("walk")
+}
+
+func (p *Person) walkCore() {
+	fmt.Println("walk core")
+}
+
+func main() {
+	p := &Person{}
+	rt := reflect.TypeOf(p)
+	fmt.Println(rt.MethodByName("Walk"))
+	fmt.Println(rt.MethodByName("walkCore"))
+}
+```
+
+运行结果
+
+```bash
+$ go run main.go
+{Walk  func(*main.Person) <func(*main.Person) Value> 0} true
+{  <nil> <invalid Value> 0} false
+```
+
 ## 参考
 
 - [4.3 反射](https://draveness.me/golang/docs/part2-foundation/ch04-basic/golang-reflect/)
 - Go程序设计语言，Alan
+- [gomonkey支持为private method打桩了](https://www.jianshu.com/p/7546e788613b)

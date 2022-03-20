@@ -1,0 +1,103 @@
+## 基本概念
+
+iptables用于设置、维护、查看linux kernel中ip packet filter rules的tables
+
+概念间的关系：tables--chains--rules，都是一对多的关系
+
+每个rule会设置对匹配到的packet做什么事情，叫target；target可以是user-defined的chain，或者是指定的值之一：ACCEPT，DROP，QUEUE，RETURN
+
+## target
+
+- ACCEPT: 让packet通过
+- DROP: 丢弃packet
+- QUEUE: 传递packet到用户空间
+- RETURN: 停止遍历chian，//？？
+
+## 数据包的传输过程
+
+- 当一个数据包进入网卡时，它首先进入PREROUTING链，内核根据数据包目的IP判断是否需要转送出去。
+- 如果数据包就是进入本机的，它就会沿着图向下移动，到达INPUT链。数据包到了INPUT链后，任何进程都会收到它。本机上运行的程序可以发送数据包，这些数据包会经过OUTPUT链，然后到达POSTROUTING链输出。
+- 如果数据包是要转发出去的，且内核允许转发，数据包就会如图所示向右移动，经过FORWARD链，然后到达POSTROUTING链输出。
+
+![](/static/images/2203/p014.webp)
+
+## tables
+
+表（tables）提供特定的功能，iptables内置了4个表，即filter表、nat表、mangle表和raw表，分别用于实现包过滤，网络地址转换、包重构(修改)和数据跟踪处理。
+
+- filter表：
+  - 三个链：INPUT、FORWARD、OUTPUT
+  - 作用：过滤数据包
+  - 内核模块：iptables_filter.
+- nat表：
+  - 三个链：PREROUTING、POSTROUTING、OUTPUT
+  - 作用：用于网络地址转换（IP、端口）
+  - 内核模块：iptable_nat
+- mangle表：
+  - 五个链：PREROUTING、POSTROUTING、INPUT、OUTPUT、FORWARD
+  - 作用：修改数据包的服务类型、TTL、并且可以配置路由实现QOS
+  - 内核模块：iptable_mangle
+  - (别看这个表这么麻烦，咱们设置策略时几乎都不会用到它)
+- raw表：
+  - 两个链：OUTPUT、PREROUTING
+  - 作用：决定数据包是否被状态跟踪机制处理  
+  - 内核模块：iptable_raw
+  - （用的不多）
+
+![](/static/images/2203/p015.webp)
+
+## 命令概览
+
+![](/static/images/2203/p016.webp)
+
+![](/static/images/2203/p017.webp)
+
+## commands, 命令列表
+
+### 查看
+
+`-L,--list`
+
+```
+iptables -L [chain]
+```
+
+### 删除
+
+`-D,--delete`
+
+```
+iptables -D chain rule-specification
+iptables -D chain rulenum
+```
+
+### 追加
+
+`-A,--append`
+
+```
+iptables -A chain rule-specification
+```
+
+### 插入
+
+`-I,--insert`
+
+```
+iptables -I chain [rulenum] rule-specification
+```
+
+### 替换
+
+`-R,--replace`
+
+```
+iptables -R chain rulenum rule-specification
+```
+
+
+## 参考
+
+- [man iptables](https://linux.die.net/man/8/iptables)
+- [iptables extensions](http://ipset.netfilter.org/iptables-extensions.man.html)
+- [iptables详解及一些常用规则](https://www.jianshu.com/p/ee4ee15d3658)

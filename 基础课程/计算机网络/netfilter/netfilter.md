@@ -9,7 +9,7 @@
 
 ### nftables
 
-- nftables 主要由三个组件组成：内核实现、libnl netlink 通信和 nftables 用户空间。 
+- nftables 主要由三个组件组成：内核实现、libnl netlink 通信和 nftables 用户空间。
   - 其中内核提供了一个 netlink 配置接口以及运行时规则集评估
   - libnl 包含了与内核通信的基本函数
   - 用户空间可以通过 nft 和用户进行交互。
@@ -24,6 +24,8 @@
 
 ### 架构图
 
+![](/static/images/2203/p018.svg)
+
 ![](/static/images/2108/p001.png)
 
 
@@ -34,3 +36,4 @@
 - [nftables 使用教程](https://fuckcloudnative.io/posts/using-nftables/)
 - [https://www.netfilter.org/](https://www.netfilter.org/)
 - [过渡到 nftables](https://zhuanlan.zhihu.com/p/88981486)
+- [[译] 深入理解 iptables 和 netfilter 架构](https://arthurchiao.art/blog/deep-dive-into-iptables-and-netfilter-arch-zh/)

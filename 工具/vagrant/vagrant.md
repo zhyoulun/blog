@@ -4,7 +4,7 @@
 - 执行`vagrant validate`文件内容是否是正确的
 - 启动vagrant机器，`vagrant up`
 - 进入机器`vagrant ssh`
-
+- 默认登录账号密码是vagrant
 
 ```Vagrantfile
 Vagrant.configure("2") do |config|
@@ -42,3 +42,7 @@ VBoxManage: error: Details: code NS_ERROR_FAILURE (0x80004005), component Machin
     v.gui = true
   end
 ```
+
+## 参考
+
+- [vagrant root 登录虚拟机](https://www.cnblogs.com/feixiangmanon/p/10992087.html)

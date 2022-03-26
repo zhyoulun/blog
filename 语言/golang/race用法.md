@@ -48,7 +48,7 @@ func add(wg *sync.WaitGroup) {
 ```
 
 ```bash
-go run -race study/race/race001/race001.go
+go run -race main.go
 ==================
 WARNING: DATA RACE
 Read at 0x0000011e55b0 by goroutine 8:

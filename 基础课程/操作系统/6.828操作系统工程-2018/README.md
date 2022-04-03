@@ -3,12 +3,26 @@
 - 6.828操作系统xv6中文教程：https://github.com/ranxian/xv6-chinese
 - 2018年的xv6代码库：https://pdos.csail.mit.edu/6.828/2018/jos.git
   - 我的clone：https://github.com/zhyoulun/6.828-xv6-2018
+- pdf源码：https://pdos.csail.mit.edu/6.828/2018/xv6/xv6-rev11.pdf
+- 英文书：https://pdos.csail.mit.edu/6.828/2018/xv6/book-rev11.pdf
+  - 中文翻译：https://th0ar.gitbooks.io/xv6-chinese/content/content/chapter1.html
+
+
 
 ### 我的代码库
 
 - 我的clone：https://github.com/zhyoulun/6.828-xv6-2018
 
-### 资料大杂烩
+## 参考
+
+主要参考资料
+
+- [主页2018](https://pdos.csail.mit.edu/6.828/2018/schedule.html)
+- [别人实验](https://github.com/yunwei37/6.828-2018-labs)
+- [汇编语言教材](https://pdos.csail.mit.edu/6.828/2018/readings/pcasm-book.pdf)
+  - 必备的知识
+
+备选参考资料
 
 - [主页2019](https://pdos.csail.mit.edu/6.828/2019/schedule.html)
 - [xv6 book 2019](https://pdos.csail.mit.edu/6.828/2019/xv6/book-riscv-rev0.pdf)

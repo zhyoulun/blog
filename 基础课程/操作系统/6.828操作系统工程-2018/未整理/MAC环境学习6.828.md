@@ -43,14 +43,6 @@ make
 make qemu
 ```
 
-## 调试
-
-安装
-
-```
-```
-
-
 ## 参考
 
 - [MIT6.828课程JOS在macOS下的环境配置](https://www.jianshu.com/p/2f1e75bd2c53)

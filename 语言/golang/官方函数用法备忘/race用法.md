@@ -13,7 +13,7 @@ Go 1.1引入竞态探测器，一个用于在Go代码中查找 Race conditions �
 ```
 go test -race mypkg    // test the package
 go run -race mysrc.go  // compile and run the program
-go build -race mycmd   // build the command
+go build -race mycmd   // build the command，build之后再运行，可以看到race详情
 go install -race mypkg // install the package
 ```
 
@@ -53,19 +53,19 @@ go run -race main.go
 WARNING: DATA RACE
 Read at 0x0000011e55b0 by goroutine 8:
   main.add()
-      /Users/zhangyoulun/codes/github/go/study/race/race001/race001.go:21 +0x3e
+      /race001/race001.go:21 +0x3e
 
 Previous write at 0x0000011e55b0 by goroutine 7:
   main.add()
-      /Users/zhangyoulun/codes/github/go/study/race/race001/race001.go:21 +0x5a
+      /race001/race001.go:21 +0x5a
 
 Goroutine 8 (running) created at:
   main.main()
-      /Users/zhangyoulun/codes/github/go/study/race/race001/race001.go:14 +0xab
+      /race001/race001.go:14 +0xab
 
 Goroutine 7 (finished) created at:
   main.main()
-      /Users/zhangyoulun/codes/github/go/study/race/race001/race001.go:14 +0xab
+      /race001/race001.go:14 +0xab
 ==================
 99936
 Found 1 data race(s)

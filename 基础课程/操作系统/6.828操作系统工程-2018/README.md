@@ -7,7 +7,20 @@
 - 英文书：https://pdos.csail.mit.edu/6.828/2018/xv6/book-rev11.pdf
   - 中文翻译：https://th0ar.gitbooks.io/xv6-chinese/content/content/chapter1.html
 
+### 学习环境
 
+ubuntu 64位
+
+```
+$ uname -a
+Linux mydev 4.15.0-175-generic #184-Ubuntu SMP Thu Mar 24 17:48:36 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+```
+
+安装qemu
+
+```
+sudo apt install qemu
+```
 
 ### 我的代码库
 

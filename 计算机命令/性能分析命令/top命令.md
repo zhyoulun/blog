@@ -40,9 +40,9 @@
 
 其中字段解释如下：
 
-- a) is the combined `us` and `ni` percentage; 
+- a) is the combined `us` and `ni` percentage;
   - us+ni
-- b) is the `sy` percentage; 
+- b) is the `sy` percentage;
   - sy
 - c) is the total;
   - a和b的和
@@ -87,19 +87,26 @@ PR代表进程的调度优先级。
 GiB Mem : 18.7/15.738   [ ...
 GiB Swap:  0.0/7.999    [ ...
 
-- a) is the percentage used; 
+- a) is the percentage used;
   - 使用量(total-avail)
 - b) is the total available;
   - 总的可用量
 - c) is one of two visual graphs of those representations.
   - 图形化展示
 
+## buff/cache解释
+
+- buff（Buffer Cache）是一种I/O缓存，用于内存和硬盘的缓冲，是io设备的读写缓冲区。根据磁盘的读写设计的，把分散的写操作集中进行，减少磁盘碎片和硬盘的反复寻道，从而提高系统性能。
+- cache（Page Cache）是一种高速缓存，用于CPU和内存之间的缓冲 ,是文件系统的cache。
+把读取过的数据保存起来，重新读取时若命中（找到需要的数据）就不要去读硬盘了，若没有命中就读硬盘。其中的数据会根据读取频率进行组织，把最频繁读取的内容放在最容易找到的位置，把不再读的内容不断往后排，直至从中删除。
+
 ## 多核监控
 
 按数字1切换模式，可监控每个逻辑CPU的状况
 
 
-sys
+
+
 ## 参考
 
 - [linuxtools-rst - top linux下的任务管理器](https://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/top.html)
@@ -110,5 +117,4 @@ sys
   - 里边说的部分内容和man top手册有出入
 - [https://man7.org/linux/man-pages/man7/sched.7.html](https://man7.org/linux/man-pages/man7/sched.7.html)
 - [Linux “top” command: What are us, sy, ni, id, wa, hi, si and st (for CPU usage)?](https://unix.stackexchange.com/questions/18918/linux-top-command-what-are-us-sy-ni-id-wa-hi-si-and-st-for-cpu-usage)
-
-
+- [Linux中buff-cache占用过高解决手段](https://focusss.github.io/2019/02/10/Linux%E4%B8%ADbuff-cache%E5%8D%A0%E7%94%A8%E8%BF%87%E9%AB%98%E8%A7%A3%E5%86%B3%E6%89%8B%E6%AE%B5/)

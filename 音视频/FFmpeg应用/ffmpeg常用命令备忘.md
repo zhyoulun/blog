@@ -184,6 +184,22 @@ File:
 ...
 ```
 
+## 选择指定流
+
+如果一个文件有1个video stream，5个audio stream，我们希望选择其中的1个video stream，和第3个audio stream拼接成一个新的文件，可以使用map
+
+```
+ffmpeg -i input.mkv -map 0:0 -map 0:3 -c copy -y out.mkv
+```
+
+## metadata, chapter
+
+删除metadata信息，删除chapter信息
+
+```
+ffmpeg -i input.mkv -c copy -map_chapters -1 -map_metadata -1 -y output.mkv
+```
+
 ## 帮助
 
 **列出支持的所有格式**
@@ -321,3 +337,6 @@ Filters:
 - [ffmpeg给视频添加时间水印](https://blog.csdn.net/ternence_hsu/article/details/102540626)
 - [ffmpeg 生成单色测试视频](https://blog.csdn.net/ternence_hsu/article/details/90578565)
 - [FFmpeg生成静音音频和黑屏视频命令](https://blog.csdn.net/shaosunrise/article/details/122348369)
+- [ffmpeg流选择](https://blog.csdn.net/qq_18998145/article/details/98940502)
+- [ffmpeg | 删除视频中的章节数据](https://l-fay.github.io/2021/02/05/ffmpeg03/)
+- [ffmpeg | 删除视频中的元数据](https://l-fay.github.io/2021/06/07/ffmpeg05/)

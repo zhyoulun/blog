@@ -16,6 +16,8 @@
 
 ![](/static/images/2104/p002.webp)
 
+![](/static/images/2206/p002.webp)
+
 ### flv header
 
 - 总长9B
@@ -166,5 +168,7 @@ script_data_date
 ## 参考
 
 - [https://www.adobe.com/content/dam/acom/en/devnet/flv/video_file_format_spec_v10.pdf](https://www.adobe.com/content/dam/acom/en/devnet/flv/video_file_format_spec_v10.pdf)
+  - 上述地址没有了，替代地址：https://rtmp.veriskope.com/pdf/video_file_format_spec_v10.pdf
 - [https://github.com/imagora/FlvParser](https://github.com/imagora/FlvParser)
 - [FLV格式解析](https://www.jianshu.com/p/9a3459dc7b9a)
+- [FLV 文件格式简析](https://www.jianshu.com/p/74a13250fa1b)

@@ -105,6 +105,20 @@ ffmpeg -ss 0 -t 30 -f lavfi -i color=c=0x0000ff:s=1280x720:r=25 -vcodec libx264 
 ffmpeg -t 30 -f lavfi -i "color=c=0x0000ff:s=1280x720 [out0];aevalsrc=-2+random(0) [out1]" 1.mp4
 ```
 
+## 给一个纯视频文件增加静音流
+
+生成一个纯视频文件，用于测试
+
+```
+ffmpeg -t 300 -f lavfi -i "color=c=0x0000ff:s=1280x720" -y 1.mp4
+```
+
+给视频文件添加aac格式的音频
+
+```
+ffmpeg -i 1.mp4 -f lavfi -i "anullsrc=channel_layout=stereo:sample_rate=44100" -map 0:v -map 1:a -c:v copy -c:a libfdk_aac -profile:a aac_he -shortest -y 2.mp4
+```
+
 ## 合并视频文件
 
 **使用concat demuxer合并相同编码的文件**
@@ -340,3 +354,6 @@ Filters:
 - [ffmpeg流选择](https://blog.csdn.net/qq_18998145/article/details/98940502)
 - [ffmpeg | 删除视频中的章节数据](https://l-fay.github.io/2021/02/05/ffmpeg03/)
 - [ffmpeg | 删除视频中的元数据](https://l-fay.github.io/2021/06/07/ffmpeg05/)
+- [ffmpeg 翻译文档(ffmpeg中文文档) - 35 音频源](https://www.bookstack.cn/read/other-doc-cn-ffmpeg/ffmpeg-doc-cn-35.md)
+- [FFmpeg文档翻译](https://github.com/xdsnet/other-doc-cn-ffmpeg)
+- [adding silent audio in ffmpeg](https://stackoverflow.com/questions/12368151/adding-silent-audio-in-ffmpeg)

@@ -1,0 +1,2 @@
+- 视频教程：https://kube.academy/courses/the-kubernetes-machine/lessons/kube-proxy
+- 参数说明：https://kubernetes.io/zh-cn/docs/reference/command-line-tools-reference/kube-proxy/

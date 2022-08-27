@@ -18,11 +18,13 @@ end
 
 ### 常用命令
 
-- vagrant up 开启
-- vagrant halt 关机
-- vagrant suspend 睡眠
-- vagrant reload --provision 重启vagrant机器，强制再次运行配置管理流程
-- vagrant destroy 删除
+- `vagrant up` 开启
+- `vagrant halt` 关机
+- `vagrant suspend` 睡眠
+- `vagrant reload --provision`: 重启vagrant机器，强制再次运行配置管理流程
+- `vagrant provision`: will run all the provisioning steps now. as is in the current VM as is.
+- `vagrant destroy` 删除
+
 ### 问题记录
 
 ```
@@ -46,3 +48,4 @@ VBoxManage: error: Details: code NS_ERROR_FAILURE (0x80004005), component Machin
 ## 参考
 
 - [vagrant root 登录虚拟机](https://www.cnblogs.com/feixiangmanon/p/10992087.html)
+- [vagrant provision vs. vagrant reload --provision](https://groups.google.com/g/vagrant-up/c/-FUsHI6YSJA)

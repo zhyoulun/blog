@@ -98,13 +98,8 @@ TCP/IP协议族是一个四层协议系统，自底向上分别是数据链路�
 
 ![](/static/images/2101/p003.png)
 
-### 概览
 
-![](/static/images/2006/p013.png)
-
-![](/static/images/2006/p014.png)
 
 ## 参考
 
-- [http://www.colasoft.com.cn/download/protocols_map.php](http://www.colasoft.com.cn/download/protocols_map.php)
 - [MTU和MSS的区别](https://blog.csdn.net/LoseInVain/article/details/53694265)

@@ -11,12 +11,14 @@
   - [三层：网络层](chapter-01/01-03.md)
   - [四层：传输层](chapter-01/01-04.md)
 - 设备
-  - 网络设备(Network Device)
-    - 路由器(Router)
+  - [网络设备(Network Device)](chapter-02/02-00.md)
+    - [路由器(Router)](chapter-02/02-01.md)
     - 交换机(Switch)
+      - [网桥（Bridge）](chapter-02/02-02.md)
+      - [交换机(Switch)](chapter-02/02-03.md)
     - 集线器(Hub)
-      - 集线器(Hub)
-      - 中继器(Repeater)
+      - [中继器(Repeater)](chapter-02/02-04.md)
+      - [集线器(Hub)](chapter-02/02-05.md)
     - 无线设备(Wireless Device)
   - 终端设备(End Device)
     - 电脑(PC)
@@ -34,6 +36,13 @@
   - [ethtool](chapter-01/04-10.md)
   - [snmpget](chapter-01/04-11.md)
   - [lldptool](chapter-01/04-12.md)
+  - wireguard
+- k8s下的网络架构
+  - kube-proxy
+  - calico
+  - kube-router
+
+
 
 
 ## 参考

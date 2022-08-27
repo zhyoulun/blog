@@ -12,7 +12,6 @@
 
 
 
-
 ## 问题备忘
 
 报错
@@ -59,7 +58,34 @@ root@vm1:/opt/k8s/work/calico# diff calico.yaml calico.yaml.orig
 >           image: calico/cni:v3.16.10
 ```
 
+```bash
+# cat containerd-config.toml
+version = 2
+root = "/data/k8s/containerd/root"
+state = "/data/k8s/containerd/state"
+
+[plugins]
+  [plugins."io.containerd.grpc.v1.cri"]
+    sandbox_image = "registry.cn-beijing.aliyuncs.com/zhoujun/pause-amd64:3.1"
+    [plugins."io.containerd.grpc.v1.cri".cni]
+      bin_dir = "/opt/k8s/bin"
+      conf_dir = "/etc/cni/net.d"
+    [plugins."io.containerd.grpc.v1.cri".registry]
+      [plugins."io.containerd.grpc.v1.cri".registry.mirrors]
+        [plugins."io.containerd.grpc.v1.cri".registry.mirrors."192.168.56.1:5000"]
+          endpoint = ["http://192.168.56.1:5000"]
+  [plugins."io.containerd.runtime.v1.linux"]
+    shim = "containerd-shim"
+    runtime = "runc"
+    runtime_root = ""
+    no_shim = false
+    shim_debug = false
+```
+
 
 参考：
 - https://github.com/dotless-de/vagrant-vbguest/issues/56
 - https://www.gylinux.cn/2795.html
+- Adding insecure registry in containerd, https://stackoverflow.com/questions/65681045/adding-insecure-registry-in-containerd
+- 修改镜像tag，并上传在本地的私有仓库, https://www.cnblogs.com/Christine-ting/p/12837250.html
+- 安装运行 docker-registry, https://yeasy.gitbook.io/docker_practice/repository/registry

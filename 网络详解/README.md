@@ -23,19 +23,24 @@
   - 终端设备(End Device)
     - 电脑(PC)
 - Linux网络协议栈
+  - [tun-and-tap](chapter-03/03-01.md)
+  - [macvlan-and-macvtap](chapter-03/03-02.md)
+  - [veth-pair](chapter-03/03-03.md)
+  - [linux-bridge](chapter-03/03-04.md)
+  - [vlan](chapter-03/03-05.md)
 - Linux网络工具
-  - [需要关注的工具列表](chapter-01/04-01.md)
-  - [ss](chapter-01/04-02.md)
-  - [netstat](chapter-01/04-03.md)
-  - [tcplife](chapter-01/04-04.md)
-  - [tcpretrans](chapter-01/04-05.md)
-  - [udpconnect](chapter-01/04-06.md)
-  - [tcpdump](chapter-01/04-07.md)
-  - [nicstat](chapter-01/04-08.md)
-  - [ip](chapter-01/04-09.md)
-  - [ethtool](chapter-01/04-10.md)
-  - [snmpget](chapter-01/04-11.md)
-  - [lldptool](chapter-01/04-12.md)
+  - [需要关注的工具列表](chapter-04/04-01.md)
+  - [ss](chapter-04/04-02.md)
+  - [netstat](chapter-04/04-03.md)
+  - [tcplife](chapter-04/04-04.md)
+  - [tcpretrans](chapter-04/04-05.md)
+  - [udpconnect](chapter-04/04-06.md)
+  - [tcpdump](chapter-04/04-07.md)
+  - [nicstat](chapter-04/04-08.md)
+  - [ip](chapter-04/04-09.md)
+  - [ethtool](chapter-04/04-10.md)
+  - [snmpget](chapter-04/04-11.md)
+  - [lldptool](chapter-04/04-12.md)
   - wireguard
 - k8s下的网络架构
   - kube-proxy
@@ -47,6 +52,8 @@
 
 ## 参考
 
-- Cisco Packet Tracer
+- Cisco Packet Tracer，https://www.netacad.com/courses/packet-tracer
 - [解决Cisco Packet Tracer无法登录的问题](https://www.youtube.com/watch?v=04VpVYO7F78)
 - 计算机网络，谢希仁
+- 猿大白@公众号「Linux云计算网络」，https://www.cnblogs.com/bakari/default.html?page=1
+- https://www.zhaohuabing.com/

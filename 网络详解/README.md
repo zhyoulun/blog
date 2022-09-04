@@ -30,7 +30,7 @@
   - [vlan](chapter-03/03-05.md)
 - Linux网络工具
   - [需要关注的工具列表](chapter-04/04-01.md)
-  - [ss](chapter-04/04-02.md)
+  - [iperf](chapter-04/04-02.md)
   - [netstat](chapter-04/04-03.md)
   - [tcplife](chapter-04/04-04.md)
   - [tcpretrans](chapter-04/04-05.md)
@@ -41,6 +41,7 @@
   - [ethtool](chapter-04/04-10.md)
   - [snmpget](chapter-04/04-11.md)
   - [lldptool](chapter-04/04-12.md)
+  - [ss](chapter-04/04-13.md)
   - wireguard
 - k8s下的网络架构
   - kube-proxy

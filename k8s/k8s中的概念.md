@@ -23,9 +23,13 @@ PV可以理解为k8s集群中的某个网络存储中对应的一块存储，它
 
 ### Endpoint
 
+## 关系
 
+### Service&Pod&Endpoint
 
-### 参考
+![](/static/images/2209/p004.jpeg)
+
+## 未整理
 
 - pod
 - deployment

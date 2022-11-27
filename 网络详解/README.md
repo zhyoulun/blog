@@ -24,6 +24,8 @@
     - 电脑(PC)
 - Linux网络协议栈
   - [tun-and-tap](chapter-03/03-01.md)
+  - [bridge-and-macvlan](chapter-03/03-07.md)
+  - [macvlan-and-ipvlan](chapter-03/03-06.md)
   - [macvlan-and-macvtap](chapter-03/03-02.md)
   - [veth-pair](chapter-03/03-03.md)
   - [linux-bridge](chapter-03/03-04.md)

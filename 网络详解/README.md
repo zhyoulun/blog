@@ -48,7 +48,9 @@
   - [snmpget](chapter-04/04-11.md)
   - [lldptool](chapter-04/04-12.md)
   - [ss](chapter-04/04-13.md)
-  - wireguard
+  - [wireguard](chapter-04/04-14.md)
+  - [dig](chapter-04/04-15.md)
+  - [nslookup](chapter-04/04-16.md)
 - k8s下的网络架构
   - kube-proxy
   - calico

@@ -11,7 +11,7 @@ iptables用于设置、维护、查看linux kernel中ip packet filter rules的ta
 - ACCEPT: 让packet通过
 - DROP: 丢弃packet
 - QUEUE: 传递packet到用户空间
-- RETURN: 停止遍历chian，//？？
+- RETURN: 停止遍历chain，//？？
 
 ## 数据包的传输过程
 

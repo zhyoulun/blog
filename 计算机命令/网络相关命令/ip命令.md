@@ -1,4 +1,12 @@
-- ifconfig 命令已经被 ip 命令所替代
+# ip命令
+
+arp, ifconfig, route都是古老的命令，已经被 ip 命令所替代
+
+## 属于解释
+
+- mtu 3924：最大传输单元的值是3924字节
+- qdisc noqueue：
+- inet 10.0.0.1/8：inet表示Internet（IPv4）
 
 ## 命令查询
 
@@ -236,6 +244,9 @@ zyl@mydev:~$ ip neigh
 - [man ip](https://linux.die.net/man/8/ip)
 - [ip用户手册-英文](https://lartc.org/)
 - [ip用户手册-中文](https://lartc.org/LARTC-zh_CN.GB2312.pdf)
+- [Traffic Control HOWTO](https://tldp.org/HOWTO/Traffic-Control-HOWTO/)
+- [ip route命令](https://man7.org/linux/man-pages/man8/ip-route.8.html)
 - [预备知识-Linux Networking-concepts HOWTO-英文](https://www.netfilter.org/documentation/HOWTO/networking-concepts-HOWTO.html)
 - [预备知识-Linux Networking-concepts HOWTO-中文](https://caibaoz.com/blog/2013/04/23/networking_concept_howto/)
+    - 基本的科普性文章
 - [12 个 ip 命令范例](https://zhuanlan.zhihu.com/p/32945498)

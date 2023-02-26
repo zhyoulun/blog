@@ -51,6 +51,15 @@
   - [wireguard](chapter-04/04-14.md)
   - [dig](chapter-04/04-15.md)
   - [nslookup](chapter-04/04-16.md)
+- Linux网络体系
+  - [socket_buffer](chapter-05/05-01.md)
+  - [net_device](chapter-05/05-02.md)
+- 个人理解
+  - [VirtualBox中的桥接网卡](chapter-06/06-01.md)
+  - [VirtualBox中的内部网络](chapter-06/06-02.md)
+  - [VirtualBox中的Host-Only网络](chapter-06/06-03.md)
+  - [VirtualBox中的NAT网络](chapter-06/06-04.md)
+  - [透明代理](chapter-06/06-05.md)
 - k8s下的网络架构
   - kube-proxy
   - calico

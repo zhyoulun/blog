@@ -4,12 +4,15 @@
 大纲：
 
 - 协议
+  - [术语](chapter-01/01-05.md)
   - [协议分层概述](chapter-01/01-00.md)
     - LAN/VLAN/VXLAN
   - [一层：物理层](chapter-01/01-01.md)
   - [二层：数据链路层](chapter-01/01-02.md)
   - [三层：网络层](chapter-01/01-03.md)
   - [四层：传输层](chapter-01/01-04.md)
+  - [IPv6](chapter-01/01-06.md)
+  - [VLAN](chapter-01/01-07.md)
 - 设备
   - [网络设备(Network Device)](chapter-02/02-00.md)
     - [路由器(Router)](chapter-02/02-01.md)
@@ -60,6 +63,11 @@
   - [VirtualBox中的Host-Only网络](chapter-06/06-03.md)
   - [VirtualBox中的NAT网络](chapter-06/06-04.md)
   - [透明代理](chapter-06/06-05.md)
+- netfilter/iptables
+  - [iptables术语](chapter-07/07-01.md)
+  - [iptables架构](chapter-07/07-02.md)
+  - [iptables tables](chapter-07/07-03.md)
+  - [iptables实验](chapter-07/07-04.md)
 - k8s下的网络架构
   - kube-proxy
   - calico
@@ -75,3 +83,7 @@
 - 计算机网络，谢希仁
 - 猿大白@公众号「Linux云计算网络」，https://www.cnblogs.com/bakari/default.html?page=1
 - https://www.zhaohuabing.com/
+- sdn: https://tonydeng.github.io/sdn-handbook/
+- tcp/ip：http://static.kancloud.cn/lifei6671/tcp-ip
+- iptables: https://www.frozentux.net/iptables-tutorial/iptables-tutorial.html
+  - 中文：https://www.path8.net/docs/iptables-tutorial_cn/iptables-tutorial-1.2.2-cn.pdf

@@ -338,7 +338,11 @@ Filters:
 - 第三列是转换方式，例如音频转音频、视频转视频、创建视频等操作
 - 第四列是滤镜作用说明
 
+**合并字幕到文件**
 
+```
+ffmpeg -i ~/Downloads/in.mkv -i ~/Downloads/in.ass -c:a copy -c:s copy -map 0:a -map 0:v -map 0:s -map 1:0 -y out.mkv
+```
 
 ## 参考
 
@@ -357,3 +361,5 @@ Filters:
 - [ffmpeg 翻译文档(ffmpeg中文文档) - 35 音频源](https://www.bookstack.cn/read/other-doc-cn-ffmpeg/ffmpeg-doc-cn-35.md)
 - [FFmpeg文档翻译](https://github.com/xdsnet/other-doc-cn-ffmpeg)
 - [adding silent audio in ffmpeg](https://stackoverflow.com/questions/12368151/adding-silent-audio-in-ffmpeg)
+- https://stackoverflow.com/questions/8672809/use-ffmpeg-to-add-text-subtitles
+

@@ -1,4 +1,14 @@
-启动
+### 安装
+
+https://minikube.sigs.k8s.io/docs/start/
+
+在mac上安装
+
+```
+brew install minikube
+```
+
+### 启动
 
 ```
 minikube start

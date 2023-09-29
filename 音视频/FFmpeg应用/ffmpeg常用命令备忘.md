@@ -341,7 +341,7 @@ Filters:
 **合并字幕到文件**
 
 ```
-ffmpeg -i ~/Downloads/in.mkv -i ~/Downloads/in.ass -c:a copy -c:s copy -map 0:a -map 0:v -map 0:s -map 1:0 -y out.mkv
+ffmpeg -i ~/Downloads/in.mkv -i ~/Downloads/in.ass -c:a copy -c:v copy -c:s copy -map 0:a -map 0:v -map 1:s -map 0:s -y out.mkv
 ```
 
 ## 参考

@@ -10,4 +10,5 @@ RUN apt install -y net-tools \
     wget \
     git \
     curl \
-    telnet
+    telnet \
+    python

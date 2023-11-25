@@ -1,7 +1,4 @@
-- 不能堆砌知识点，例如在讲fcntl的时候，不要讲CLOEXEC相关的知识，因为想讲清楚后者的概念，需要花费更多的篇章
-- 简单明了，参考Python神经网络编程
-
-大纲：
+## 目录
 
 - 协议
   - [术语](chapter-01/01-05.md)
@@ -11,6 +8,7 @@
   - [二层：数据链路层](chapter-01/01-02.md)
   - [三层：网络层](chapter-01/01-03.md)
   - [四层：传输层](chapter-01/01-04.md)
+    - [tcp_syn_retries](chapter-01/01-04/01-04-01.md)
   - [IPv6](chapter-01/01-06.md)
   - [VLAN](chapter-01/01-07.md)
 - 设备
@@ -28,15 +26,16 @@
 - Linux网络协议栈
   - [namespace](chapter-03/03-08.md)
   - [veth-pair](chapter-03/03-03.md)
-  - [容器与host veth pair的关系](chapter-03/03-09.md)
   - [linux-bridge](chapter-03/03-04.md)
+  - [容器与host veth pair的关系](chapter-03/03-09.md)
   - [tun-and-tap](chapter-03/03-01.md)
   - [ip forward](chapter-03/03-11.md)
   - [ipip](chapter-03/03-10.md)
+  - [vlan](chapter-03/03-05.md)
+  - [vxlan](chapter-03/03-12.md)
   - [bridge-and-macvlan](chapter-03/03-07.md)
   - [macvlan-and-ipvlan](chapter-03/03-06.md)
   - [macvlan-and-macvtap](chapter-03/03-02.md)
-  - [vlan](chapter-03/03-05.md)
 - Linux网络工具
   - [需要关注的工具列表](chapter-04/04-01.md)
   - [iperf](chapter-04/04-02.md)
@@ -68,13 +67,21 @@
   - [iptables架构](chapter-07/07-02.md)
   - [iptables tables](chapter-07/07-03.md)
   - [iptables实验](chapter-07/07-04.md)
+- 系统观测
+  - [bfc](chapter-08/08-01.md)
+  - [ebpf-exporter](chapter-08/08-02.md)
+  - [cilium-ebpf](chapter-08/08-03.md)
 - k8s下的网络架构
-  - kube-proxy
+  - [kube-proxy](chapter-09/09-01.md)
   - calico
   - kube-router
+- 概念
+  - [混杂模式](chapter-10/10-01.md)
 
+## 思路备忘
 
-
+- 不能堆砌知识点，例如在讲fcntl的时候，不要讲CLOEXEC相关的知识，因为想讲清楚后者的概念，需要花费更多的篇章
+- 简单明了，参考Python神经网络编程
 
 ## 参考
 

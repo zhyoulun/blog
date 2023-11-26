@@ -143,6 +143,13 @@ kubectl apply -f /tmp/5.yaml
 
 访问serviceIP/1.html，可以看到内容不停的轮转
 
+更换国内源
+
+```
+sudo sed -i 's/deb.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list.d/debian.sources
+sudo apt update
+```
+
 ## SCTP实验，里边有好几个工具
 
 https://isovalent.com/labs/sctp-on-cilium/
@@ -153,3 +160,4 @@ https://isovalent.com/labs/sctp-on-cilium/
 - https://kind.sigs.k8s.io/docs/user/configuration/
 - https://kubernetes.io/zh-cn/docs/tasks/access-application-cluster/web-ui-dashboard/
 - https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md
+- https://jingxiangmao.com/sourcedetail/debian/12/Debian%2012%20bookworm%E5%9B%BD%E5%86%85%E6%BA%90%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95-%E9%95%9C%E5%83%8F%E6%AF%9B/

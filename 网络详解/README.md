@@ -95,6 +95,8 @@
   - [ebpf-exporter](chapter-08/08-02.md)
   - [cilium-ebpf](chapter-08/08-03.md)
 - k8s下的网络架构
+  - [cni学习-tkng](chapter-09/09-03.md)
+  - [kindnet](chapter-09/09-02.md)
   - [kube-proxy](chapter-09/09-01.md)
   - calico
   - kube-router

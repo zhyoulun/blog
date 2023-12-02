@@ -7,13 +7,35 @@
   - [一层：物理层](chapter-01/01-01.md)
   - [二层：数据链路层](chapter-01/01-02.md)
     - [ARP](chapter-01/01-08.md)
+    - [MTU vs MSS](chapter-01/01-02/01-02-01.md)
+    - [虚拟机桥接](chapter-01/01-02/01-02-02.md)
   - [三层：网络层](chapter-01/01-03.md)
-  - [四层：传输层](chapter-01/01-04.md)
+    - [IP地址格式](chapter-01/01-03-01.md)
+  - [四层：传输层-TCP](chapter-01/01-04.md)
     - [tcp_syn_retries](chapter-01/01-04/01-04-01.md)
     - [超时重传](chapter-01/01-04/01-04-02.md)
     - [SACK](chapter-01/01-04/01-04-03.md)
+    - [tcp_fastopen](chapter-01/01-04/01-04-04.md)
+    - [tcp平滑迁移](chapter-01/01-04/01-04-05.md)
+    - [unp-echo](chapter-01/01-04/01-04-06.md)
+    - [unp-daytime](chapter-01/01-04/01-04-07.md)
+    - [golang-echo](chapter-01/01-04/01-04-08.md)
+    - [tcp socket](chapter-01/01-04/01-04-09.md)
+    - [TCP基础知识](chapter-01/01-04/01-04-10.md)
+    - [TCP握手与挥手](chapter-01/01-04/01-04-11.md)
+    - [TCP协议阅读备忘](chapter-01/01-04/01-04-12.md)
+    - [socket编程常见问题](chapter-01/01-04/01-04-13.md)
+    - [粘包](chapter-01/01-04/01-04-14.md)
+    - [snat和dnat](chapter-01/01-04/01-04-15.md)
+  - [四层：传输层-UDP]
+      - [UDP收发效率](chapter-01/01-09/01-09-01.md)
+      - [GRO](chapter-01/01-09/01-09-02.md)
+      - [TCP vs UDP](chapter-01/01-09/01-09-03.md)
   - [IPv6](chapter-01/01-06.md)
   - [VLAN](chapter-01/01-07.md)
+    - [LAN](chapter-01/01-07/01-07-01.md)
+  - 应用层
+    - [DNS](chapter-01/01-10.md)
 - 设备
   - [网络设备(Network Device)](chapter-02/02-00.md)
     - 集线器(Hub)
@@ -38,6 +60,7 @@
   - [ip forward](chapter-03/03-11.md)
   - [ipip](chapter-03/03-10.md)
   - [vlan](chapter-03/03-05.md)
+    - [VLAN虚拟局域网](chapter-03/03-13.md)
   - [vxlan](chapter-03/03-12.md)
   - [bridge-and-macvlan](chapter-03/03-07.md)
   - [macvlan-and-ipvlan](chapter-03/03-06.md)
@@ -45,6 +68,7 @@
 - Linux网络工具
   - [需要关注的工具列表](chapter-04/04-01.md)
   - [iptables](chapter-04/04-17.md)
+    - [NAT](chapter-04/04-34.md)
   - [nft](chapter-04/04-18.md)
   - [curl](chapter-04/04-19.md)
   - [iperf](chapter-04/04-02.md)
@@ -76,6 +100,9 @@
   - [tcconfig](chapter-04/04-31.md)
   - [tcping](chapter-04/04-32.md)
   - [traceroute](chapter-04/04-33.md)
+  - [lvs](chapter-04/04-34.md)
+  - MAC环境
+    - [netstat](chapter-04/04-34/04-34-01.md)
 - Linux网络体系
   - [socket_buffer](chapter-05/05-01.md)
   - [net_device](chapter-05/05-02.md)
@@ -102,6 +129,9 @@
   - kube-router
 - 概念
   - [混杂模式](chapter-10/10-01.md)
+  - [国际出口带宽](chapter-10/10-02.md)
+  - [中国骨干网](chapter-10/10-03.md)
+  - [SDN](chapter-10/10-04.md)
 
 ## 思路备忘
 

@@ -8,9 +8,11 @@
   - [二层：数据链路层](chapter-01/01-02.md)
     - [ARP](chapter-01/01-08.md)
     - [MTU vs MSS](chapter-01/01-02/01-02-01.md)
-    - [虚拟机桥接](chapter-01/01-02/01-02-02.md)
+    - [MAC唯一性问题](chapter-01/01-02/01-02-03.md)
+    - [二层转发原理](chapter-01/01-02/01-02-04.md)
   - [三层：网络层](chapter-01/01-03.md)
     - [IP地址格式](chapter-01/01-03-01.md)
+    - [三层转发原理](chapter-01/01-03/01-03-02.md)
   - [四层：传输层-TCP](chapter-01/01-04.md)
     - [tcp_syn_retries](chapter-01/01-04/01-04-01.md)
     - [超时重传](chapter-01/01-04/01-04-02.md)
@@ -36,6 +38,7 @@
     - [LAN](chapter-01/01-07/01-07-01.md)
   - 应用层
     - [DNS](chapter-01/01-10.md)
+    - [DHCP](chapter-01/01-11/01-11-01.md)
 - 设备
   - [网络设备(Network Device)](chapter-02/02-00.md)
     - 集线器(Hub)
@@ -97,21 +100,25 @@
   - [route](chapter-04/04-28.md)
   - [ssh](chapter-04/04-29.md)
   - [tcconfig](chapter-04/04-30.md)
-  - [tcconfig](chapter-04/04-31.md)
   - [tcping](chapter-04/04-32.md)
   - [traceroute](chapter-04/04-33.md)
   - [lvs](chapter-04/04-34.md)
+  - [vpn](chapter-04/04-35.md)
+  - [xxx](chapter-04/04-31.md)
   - MAC环境
     - [netstat](chapter-04/04-34/04-34-01.md)
 - Linux网络体系
   - [socket_buffer](chapter-05/05-01.md)
   - [net_device](chapter-05/05-02.md)
 - 个人理解
-  - [VirtualBox中的桥接网卡](chapter-06/06-01.md)
-  - [VirtualBox中的内部网络](chapter-06/06-02.md)
   - [VirtualBox中的Host-Only网络](chapter-06/06-03.md)
-  - [VirtualBox中的NAT网络](chapter-06/06-04.md)
+  - [VirtualBox中的内部网络](chapter-06/06-02.md)
+  - [虚拟机NAT&桥接](chapter-01/01-02/01-02-02.md)
+    - [VirtualBox中的NAT网络](chapter-06/06-04.md)
+    - [VirtualBox中的桥接网卡](chapter-06/06-01.md)
+  - [未整理的好文章-虚拟机网络](chapter-06/06-07.md)
   - [透明代理](chapter-06/06-05.md)
+  - [流量分割](chapter-06/06-06.md)
 - netfilter/iptables
   - [iptables术语](chapter-07/07-01.md)
   - [iptables架构](chapter-07/07-02.md)
@@ -122,6 +129,7 @@
   - [ebpf-exporter](chapter-08/08-02.md)
   - [cilium-ebpf](chapter-08/08-03.md)
 - k8s下的网络架构
+  - [cni plugins](chapter-09/09-04.md)
   - [cni学习-tkng](chapter-09/09-03.md)
   - [kindnet](chapter-09/09-02.md)
   - [kube-proxy](chapter-09/09-01.md)

@@ -1,9 +1,14 @@
-## 目录
+## 精写目录
+
+- [iptables](chapter-07/07-05.md)
+- [netfilter](chapter-07/07-06.md)
+- [lvs](chapter-07/07-07.md)
+
+## 初版目录
 
 - 协议
   - [术语](chapter-01/01-05.md)
   - [协议分层概述](chapter-01/01-00.md)
-    - LAN/VLAN/VXLAN
   - [一层：物理层](chapter-01/01-01.md)
     - 宽带接入技术
       - ADSL技术
@@ -16,8 +21,9 @@
     - [二层转发原理](chapter-01/01-02/01-02-04.md)
     - 以太网帧格式
     - CSMA/CD协议
-    - [VLAN](chapter-01/01-07.md)
     - [LAN](chapter-01/01-07/01-07-01.md)
+    - [VLAN](chapter-01/01-07.md)
+    - VXLAN
     - STP
   - [三层：网络层](chapter-01/01-03.md)
     - [IP地址格式](chapter-01/01-03-01.md)
@@ -104,7 +110,12 @@
   - [容器与host veth pair的关系](chapter-03/03-09.md)
   - [tun-and-tap](chapter-03/03-01.md)
   - [ip forward](chapter-03/03-11.md)
-  - [ipip](chapter-03/03-10.md)
+  - linux隧道
+    - [ipip](chapter-03/03-10.md)
+    - [GRE](chapter-03/03-14.md)
+    - sit
+    - ISATAP
+    - VTI
   - [vlan](chapter-03/03-05.md)
     - [VLAN虚拟局域网](chapter-03/03-13.md)
   - [vxlan](chapter-03/03-12.md)
@@ -153,9 +164,9 @@
   - [tcping](chapter-04/04-32.md)
   - [traceroute](chapter-04/04-33.md)
   - [lvs](chapter-04/04-34.md)
-  - [lvs-dr模式](chapter-04/04-38.md)
-  - [lvs-nat模式](chapter-04/04-39.md)
-  - [lvs-tun模式](chapter-04/04-40.md)
+    - [lvs-dr模式](chapter-04/04-38.md)
+    - [lvs-nat模式](chapter-04/04-39.md)
+    - [lvs-tun模式](chapter-04/04-40.md)
   - [vpn](chapter-04/04-35.md)
   - [telnet](chapter-04/04-31.md)
   - snoop
@@ -208,6 +219,7 @@
   - calico
   - kube-router
   - [Docker 使用Open vSwitch实现跨主机容器连接](chapter-09/09-05.md)
+- 微服务 && service mesh
 - 概念
   - [混杂模式](chapter-10/10-01.md)
   - [国际出口带宽](chapter-10/10-02.md)
@@ -222,10 +234,28 @@
 
 ## 思路备忘
 
+- 目标读者：对网络感兴趣、但是兜兜转转走弯路入门中的人
+- 用详细的示意图把事情讲清楚
 - 不能堆砌知识点，例如在讲fcntl的时候，不要讲CLOEXEC相关的知识，因为想讲清楚后者的概念，需要花费更多的篇章
 - 简单明了，参考Python神经网络编程
 - 关注重点知识，非重点忽略
 - 不包含音视频相关
+
+## 计划
+
+- https://trello.com/b/9yViIqCV/network-book
+
+
+- 第一遍，把每个知识点画清楚
+  - 8个月
+- 第二遍，通读调整
+  - 2个月
+- 开源（看情况）
+- 第二遍通读调整
+  - 1个月
+- 出版
+  - 1个月
+
 
 ## 参考
 
@@ -248,3 +278,12 @@
 - tcp/ip：http://static.kancloud.cn/lifei6671/tcp-ip
 - iptables: https://www.frozentux.net/iptables-tutorial/iptables-tutorial.html
   - 中文：https://www.path8.net/docs/iptables-tutorial_cn/iptables-tutorial-1.2.2-cn.pdf
+- https://www.frozentux.net/iptables-tutorial/iptables-tutorial.html
+- https://draveness.me/whys-the-design/
+- https://draveness.me/sketch-and-sketch/
+- https://draveness.me/few-words-time-management/
+- https://pixso.cn/app/editor/g0Wqq98QTWnWqNnD8QMUlA?page-id=3%3A1084
+
+
+
+

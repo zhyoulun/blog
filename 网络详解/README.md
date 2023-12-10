@@ -1,8 +1,30 @@
 ## 精写目录
 
-- [iptables](chapter-07/07-05.md)
-- [netfilter](chapter-07/07-06.md)
-- [lvs](chapter-07/07-07.md)
+- [tcp]
+- [ip]
+- [网络相关工具列表](chapter-04/04-01.md)
+- iptables
+  - [iptables介绍](chapter-07/07-05.md)
+  - [iptables使用](chapter-07/07-08.md)
+  - [iptables阅读更多](chapter-07/07-09.md)
+  - 未整理
+    - netfilter/iptables
+      - [iptables术语](chapter-07/07-01.md)
+      - [iptables tables](chapter-07/07-03.md)
+      - [iptables实验](chapter-07/07-04.md)
+      - [netfilter](chapter-07/07-06.md)
+- lvs
+  - [LVS使用](chapter-07/07-10.md)
+  - [lvs DR模式](chapter-04/04-38.md)
+  - lvs NAT模式
+  - lvs TUN模式
+  - lvs FullNAT模式
+  - [各模式间的对比总结](chapter-07/07-07.md)
+  - 未整理
+    - [lvs](chapter-04/04-34.md)
+      - [lvs-nat模式](chapter-04/04-39.md)
+      - [lvs-tun模式](chapter-04/04-40.md)
+
 
 ## 初版目录
 
@@ -123,7 +145,6 @@
   - [macvlan-and-ipvlan](chapter-03/03-06.md)
   - [macvlan-and-macvtap](chapter-03/03-02.md)
 - Linux网络工具
-  - [需要关注的工具列表](chapter-04/04-01.md)
   - [常用命令代理使用方法](chapter-04/04-46.md)
   - [iptables](chapter-04/04-17.md)
     - [NAT](chapter-04/04-34.md)
@@ -163,10 +184,6 @@
   - [tcconfig](chapter-04/04-30.md)
   - [tcping](chapter-04/04-32.md)
   - [traceroute](chapter-04/04-33.md)
-  - [lvs](chapter-04/04-34.md)
-    - [lvs-dr模式](chapter-04/04-38.md)
-    - [lvs-nat模式](chapter-04/04-39.md)
-    - [lvs-tun模式](chapter-04/04-40.md)
   - [vpn](chapter-04/04-35.md)
   - [telnet](chapter-04/04-31.md)
   - snoop
@@ -202,11 +219,6 @@
   - [未整理的好文章-虚拟机网络](chapter-06/06-07.md)
   - [透明代理](chapter-06/06-05.md)
   - [流量分割](chapter-06/06-06.md)
-- netfilter/iptables
-  - [iptables术语](chapter-07/07-01.md)
-  - [iptables架构](chapter-07/07-02.md)
-  - [iptables tables](chapter-07/07-03.md)
-  - [iptables实验](chapter-07/07-04.md)
 - 系统观测
   - [bfc](chapter-08/08-01.md)
   - [ebpf-exporter](chapter-08/08-02.md)
@@ -237,6 +249,7 @@
 - 目标读者：对网络感兴趣、但是兜兜转转走弯路入门中的人
 - 用详细的示意图把事情讲清楚
 - 不能堆砌知识点，例如在讲fcntl的时候，不要讲CLOEXEC相关的知识，因为想讲清楚后者的概念，需要花费更多的篇章
+- 不进行穷举性的罗列，只确保读者能学会概要，然后告知他哪里可以查询详细的使用清单
 - 简单明了，参考Python神经网络编程
 - 关注重点知识，非重点忽略
 - 不包含音视频相关
@@ -276,14 +289,12 @@
 - https://www.zhaohuabing.com/
 - sdn: https://tonydeng.github.io/sdn-handbook/
 - tcp/ip：http://static.kancloud.cn/lifei6671/tcp-ip
-- iptables: https://www.frozentux.net/iptables-tutorial/iptables-tutorial.html
-  - 中文：https://www.path8.net/docs/iptables-tutorial_cn/iptables-tutorial-1.2.2-cn.pdf
+
 - https://www.frozentux.net/iptables-tutorial/iptables-tutorial.html
 - https://draveness.me/whys-the-design/
 - https://draveness.me/sketch-and-sketch/
 - https://draveness.me/few-words-time-management/
 - https://pixso.cn/app/editor/g0Wqq98QTWnWqNnD8QMUlA?page-id=3%3A1084
-
-
-
-
+- https://sysctl-explorer.net/fs/
+- https://superproxy.github.io/docs/lvs/index.html
+- http://www.austintek.com/LVS/LVS-HOWTO/HOWTO/LVS-HOWTO.LVS-NAT.html

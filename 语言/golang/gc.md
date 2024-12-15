@@ -1,3 +1,10 @@
+## GC的原理说明
+
+里边还有一些参数控制的说明
+
+- https://tip.golang.org/doc/gc-guide
+
+
 ## SetGCPercent
 
 ```go

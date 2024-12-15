@@ -5,10 +5,10 @@ global:
   # scrape_timeout is set to the global default (10s).
 
 # Alertmanager configuration
-alerting:
-  alertmanagers:
-  - static_configs:
-    - targets:
+# alerting:
+#   alertmanagers:
+#   - static_configs:
+#     - targets:
       # - alertmanager:9093
 
 # Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
@@ -36,7 +36,7 @@ scrape_configs:
 # remote_read:
 #   - url: http://prometheus-influxdb-adapter:9201/read
 
-remote_write:
-  - url: http://influxdb:8086/api/v1/prom/write?u=my_user&p=my_password&db=prometheus
-remote_read:
-  - url: http://influxdb:8086/api/v1/prom/read?u=my_user&p=my_password&db=prometheus
+# remote_write:
+#   - url: http://influxdb:8086/api/v1/prom/write?u=my_user&p=my_password&db=prometheus
+# remote_read:
+#   - url: http://influxdb:8086/api/v1/prom/read?u=my_user&p=my_password&db=prometheus

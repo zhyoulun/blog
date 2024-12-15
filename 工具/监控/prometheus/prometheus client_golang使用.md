@@ -1,4 +1,14 @@
+## client_golang内置指标
 
+![](/static/images/2411/p001.png)
+
+其他可以额外的使用的内置指标
+
+```golang
+prometheus.MustRegister(collectors.NewBuildInfoCollector())
+```
+
+## 自定义指标
 
 示例代码
 

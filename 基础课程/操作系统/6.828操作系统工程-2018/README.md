@@ -1,11 +1,14 @@
 ### 最佳学习资料
 
 - 6.828操作系统xv6中文教程：https://github.com/ranxian/xv6-chinese
-- 2018年的xv6代码库：https://pdos.csail.mit.edu/6.828/2018/jos.git
-  - 我的clone：https://github.com/zhyoulun/6.828-xv6-2018
 - pdf源码：https://pdos.csail.mit.edu/6.828/2018/xv6/xv6-rev11.pdf
+- 代码仓库：https://github.com/mit-pdos/xv6-public
+  - 我的clone：https://github.com/zhyoulun/xv6-public
 - 英文书：https://pdos.csail.mit.edu/6.828/2018/xv6/book-rev11.pdf
   - 中文翻译：https://th0ar.gitbooks.io/xv6-chinese/content/content/chapter1.html
+- 2018年的xv6代码库：https://pdos.csail.mit.edu/6.828/2018/jos.git
+  - 我的clone：https://github.com/zhyoulun/6.828-xv6-2018
+  这个似乎和pdf文件中的对不上
 
 ### 学习环境
 

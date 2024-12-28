@@ -1,4 +1,10 @@
+可以系统学习的书：
 
+[pcasm-book.pdf](/static/pdf/2412/pcasm-book.pdf)
+
+这本书来自mit6.828的推荐
+
+[代码下载](https://pacman128.github.io/pcasm/)
 
 ## 参考
 

@@ -16,6 +16,12 @@ iface eth1 inet dhcp
 
 具体是eth1还是enp0s8需要通过`ip link`查看当前的网卡列表
 
+修改配置生效
+
+```
+sudo systemctl restart networking
+```
+
 ## 参考
 
 - [In VirtualBox, how do I set up host-only virtual machines that can access the Internet?](https://askubuntu.com/questions/293816/in-virtualbox-how-do-i-set-up-host-only-virtual-machines-that-can-access-the-in)

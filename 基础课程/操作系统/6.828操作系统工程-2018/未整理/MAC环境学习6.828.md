@@ -12,7 +12,9 @@ port的下载地址：https://www.macports.org/install.php
 
 ### 安装qemu
 
-已经安装过qemu了
+```
+brew install qemu
+```
 
 安装后的位置：/usr/local/bin/qemu-system-i386
 

@@ -92,17 +92,31 @@ readsect(void *dst, uint offset)
   // Issue command.
   waitdisk();
   outb(0x1F2, 1);   // count = 1
+
   outb(0x1F3, offset);
   outb(0x1F4, offset >> 8);
   outb(0x1F5, offset >> 16);
   outb(0x1F6, (offset >> 24) | 0xE0);
+
   outb(0x1F7, 0x20);  // cmd 0x20 - read sectors
 
   // Read data.
   waitdisk();
   insl(0x1F0, dst, SECTSIZE/4);
 }
+```
 
+![](/static/images/2501/p002.png)
+
+尽管 x86 体系支持 16 位 I/O 地址（理论上有16^4=2^16=65536个），但实际CPU实际没有这么多的引脚，是通过如下一些技术解决的：
+
+- 总线共享：CPU 使用少量引脚（如 16~32 根地址线）通过总线传输地址，而非每个端口有独立引脚。
+- 地址解码器：I/O 地址范围分配给不同设备，由地址解码器选择性激活某个设备。
+- 扩展机制：借助控制器和桥接芯片（如 PCI、USB 控制器）进一步扩展设备数量。
+- 多路复用：数据总线和地址总线可复用同一组引脚，通过时钟和控制信号区分功能。
+  - 在 PC 电脑（x86 架构） 中，地址总线和数据总线是独立的，各自有专用的物理硬件。
+
+```
 // Read 'count' bytes at 'offset' from kernel into physical address 'pa'.
 // Might copy more than asked.
 void

@@ -4,3 +4,12 @@ build/
 *.log
 .vagrant
 .idea/
+
+*.o
+*.d
+settings.json
+*.out
+*.img
+*.data
+*.mbr
+*.elf

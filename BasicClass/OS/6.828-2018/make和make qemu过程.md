@@ -34,6 +34,11 @@ ld: warning: section `.bss' type changed to PROGBITS
 ld: warning: obj/kern/kernel has a LOAD segment with RWX permissions
 objdump -S obj/kern/kernel > obj/kern/kernel.asm
 nm -n obj/kern/kernel > obj/kern/kernel.sym
+```
+
+boot文件编译
+
+```
 + as boot/boot.S
 gcc -pipe -nostdinc    -O1 -fno-builtin -I. -MD -fno-omit-frame-pointer -std=gnu99 -static -Wall -Wno-format -Wno-unused -Werror -m32 -fno-tree-ch -fno-stack-protector -DJOS_KERNEL -c -o obj/boot/boot.o boot/boot.S
 + cc -Os boot/main.c

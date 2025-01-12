@@ -5,6 +5,7 @@ build/
 .vagrant
 .idea/
 
+obj/
 *.o
 *.d
 settings.json

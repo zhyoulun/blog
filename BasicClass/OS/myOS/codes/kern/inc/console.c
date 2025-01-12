@@ -4,8 +4,7 @@
 #include <kern/inc/memlayout.h>
 #include <kern/inc/kbdreg.h>
 #include <kern/inc/string.h>
-#include <kern/inc/assert.h>
-
+#include <kern/inc/stdio.h>
 #include <kern/inc/console.h>
 
 static void cons_intr(int (*proc)(void));
@@ -50,8 +49,16 @@ static bool serial_exists;
 static int
 serial_proc_data(void)
 {
+	//检查数据是否准备好
+	//读取 线路状态寄存器 (LSR)，它包含关于串口状态的标志。
+	//	COM1 是串口 1 的基地址，COM_LSR 是线路状态寄存器的偏移量。
+	//	COM_LSR 会返回一个字节，其中包含串口状态的信息。
+	//COM_LSR_DATA 是 数据准备就绪标志。它的位掩码通常是 0x01，表示 接收缓冲区中有数据。
 	if (!(inb(COM1+COM_LSR) & COM_LSR_DATA))
 		return -1;
+	
+	//从串口接收缓冲区中读取一个字节的数据。
+	//	COM1 是串口 1 的基地址，COM_RX 是接收寄存器的偏移量。
 	return inb(COM1+COM_RX);
 }
 
@@ -319,34 +326,49 @@ kbd_proc_data(void)
 	uint8_t stat, data;
 	static uint32_t shift;
 
+	//读取键盘状态寄存器 KBSTATP 的值，该寄存器包含键盘的当前状态。
 	stat = inb(KBSTATP);
+	//KBS_DIB：是一个位掩码，表示键盘数据输入缓冲区是否有数据（即是否有按键事件）。
 	if ((stat & KBS_DIB) == 0)
 		return -1;
 	// Ignore data from mouse.
+	//KBS_TERR：表示键盘传输错误的标志位。如果检测到传输错误，则返回 -1，表示出现错误。
 	if (stat & KBS_TERR)
 		return -1;
 
+	//从键盘数据寄存器 KBDATAP 读取按键数据，data 变量存储该按键的扫描码。
 	data = inb(KBDATAP);
 
+	//0xE0 是一个特殊的转义字符，表示键盘输入的按键是扩展键（如功能键、箭头键等）。
+	//如果接收到 0xE0，则设置 shift 标志为 E0ESC，表示正在处理一个扩展键，并返回 0，表明暂时没有可用的按键数据。
 	if (data == 0xE0) {
 		// E0 escape character
 		shift |= E0ESC;
 		return 0;
-	} else if (data & 0x80) {
+	} else if (data & 0x80) {//data & 0x80 检查是否是按键释放的事件。键盘扫描码的高位（0x80）表示按键已释放。
 		// Key released
+		//如果是按键释放事件，且 shift 标志中包含 E0ESC（表示扩展键），则不改变扫描码。
 		data = (shift & E0ESC ? data : data & 0x7F);
+		//否则，将扫描码的高位清除（即 data & 0x7F），并更新 shift 标志以反映按键释放状态。
 		shift &= ~(shiftcode[data] | E0ESC);
 		return 0;
-	} else if (shift & E0ESC) {
+	} else if (shift & E0ESC) {//如果上一个字符是扩展键（shift & E0ESC），则将扫描码的高位设置为 0x80，表示这是扩展键的扫描码。
 		// Last character was an E0 escape; or with 0x80
 		data |= 0x80;
+		//清除 E0ESC 标志，表示处理完扩展键。
 		shift &= ~E0ESC;
 	}
 
+	//根据扫描码更新 shift 标志，用于处理修饰键（如 Shift、Ctrl、Alt）。
 	shift |= shiftcode[data];
+	//处理按键状态切换（如 Caps Lock 切换大写字母）。
 	shift ^= togglecode[data];
 
+	//根据当前的 shift 状态和扫描码 data，从 charcode 数组中查找对应的字符。
+	//CTL 和 SHIFT 是修饰键的标志，表示是否按下了 Ctrl 或 Shift 键。
 	c = charcode[shift & (CTL | SHIFT)][data];
+	//如果 shift 标志中有 CAPSLOCK，则根据字母的大小写状态进行切换。
+	//如果按下了 Caps Lock 且当前字符是小写字母，则转换为大写字母；如果是大写字母，则转换为小写字母。
 	if (shift & CAPSLOCK) {
 		if ('a' <= c && c <= 'z')
 			c += 'A' - 'a';
@@ -356,6 +378,9 @@ kbd_proc_data(void)
 
 	// Process special keys
 	// Ctrl-Alt-Del: reboot
+	//检查是否同时按下了 Ctrl 和 Alt，并且按下的是 Delete 键 (KEY_DEL)。
+	//如果满足条件，执行重启操作：
+	//	使用 outb(0x92, 0x3) 向特定的 I/O 端口发送信号来触发系统重启。
 	if (!(~shift & (CTL | ALT)) && c == KEY_DEL) {
 		cprintf("Rebooting!\n");
 		outb(0x92, 0x3); // courtesy of Chris Frost
@@ -370,11 +395,6 @@ kbd_intr(void)
 	cons_intr(kbd_proc_data);
 }
 
-static void
-kbd_init(void)
-{
-}
-
 
 
 /***** General device-independent console code *****/
@@ -386,12 +406,13 @@ kbd_init(void)
 
 static struct {
 	uint8_t buf[CONSBUFSIZE];
-	uint32_t rpos;
-	uint32_t wpos;
+	uint32_t rpos;//读取位置
+	uint32_t wpos;//写入位置
 } cons;
 
 // called by device interrupt routines to feed input characters
 // into the circular console input buffer.
+// 从设备读取字符到buf
 static void
 cons_intr(int (*proc)(void))
 {
@@ -407,6 +428,7 @@ cons_intr(int (*proc)(void))
 }
 
 // return the next input character from the console, or 0 if none waiting
+// 从buf读取字符
 int
 cons_getc(void)
 {
@@ -416,7 +438,9 @@ cons_getc(void)
 	// so that this function works even when interrupts are disabled
 	// (e.g., when called from the kernel monitor).
 	serial_intr();
+		//cons_intr(serial_proc_data);
 	kbd_intr();
+		//cons_intr(kbd_proc_data);
 
 	// grab the next character from the input buffer.
 	if (cons.rpos != cons.wpos) {
@@ -442,7 +466,6 @@ void
 cons_init(void)
 {
 	cga_init();
-	kbd_init();
 	serial_init();
 
 	if (!serial_exists)
@@ -458,6 +481,7 @@ cputchar(int c)
 	cons_putc(c);
 }
 
+// 从键盘或者串口获取一个字符
 int
 getchar(void)
 {

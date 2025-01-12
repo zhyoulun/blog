@@ -1,0 +1,3 @@
+可以在mac上编译和运行
+
+提供help和kerninfo两个基础命令

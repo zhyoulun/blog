@@ -4,12 +4,10 @@
 #include <kern/inc/stdio.h>
 #include <kern/inc/string.h>
 #include <kern/inc/memlayout.h>
-#include <kern/inc/assert.h>
 #include <kern/inc/x86.h>
 
 #include <kern/inc/console.h>
 #include <kern/inc/monitor.h>
-#include <kern/inc/kdebug.h>
 
 #define CMDBUF_SIZE	80	// enough for one VGA text line
 
@@ -53,15 +51,6 @@ mon_kerninfo(int argc, char **argv, struct Trapframe *tf)
 		ROUNDUP(end - entry, 1024) / 1024);
 	return 0;
 }
-
-int
-mon_backtrace(int argc, char **argv, struct Trapframe *tf)
-{
-	// Your code here.
-	return 0;
-}
-
-
 
 /***** Kernel monitor command interpreter *****/
 
@@ -117,8 +106,10 @@ monitor(struct Trapframe *tf)
 
 
 	while (1) {
+		// 读取一行字符
 		buf = readline("K> ");
 		if (buf != NULL)
+			// 运行命令
 			if (runcmd(buf, tf) < 0)
 				break;
 	}

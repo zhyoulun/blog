@@ -35,7 +35,13 @@ bootmain(void)
 
   // Read 1st page off disk
   readseg((uchar*)elf, 4096, 0);
+```
 
+The C part of the boot loader, bootmain.c (9200), expects to ﬁnd a copy of the kernel executable on the disk starting at the second sector. The kernel is an ELF for- mat binary, as we have seen in Chapter 2. To get access to the ELF headers, bootmain loads the ﬁrst 4096 bytes of the ELF binary (9214). It places the in-memory copy at ad- dress 0x10000.
+
+引导加载程序的C部分bootmain.c（9200）期望从第二个扇区开始在磁盘上找到内核可执行文件的副本。内核是一个elf格式二进制文件，正如我们在第2章中看到的。为了访问ELF头，bootmain加载ELF二进制文件的前4096个字节（9214）。它将内存副本放置在ad-dress 0x10000。
+
+```c
   // Is this an ELF executable?
   if(elf->magic != ELF_MAGIC)
     return;  // let bootasm.S handle error
@@ -54,7 +60,13 @@ bootmain(void)
     if(ph->memsz > ph->filesz)
       stosb(pa + ph->filesz, 0, ph->memsz - ph->filesz);
   }
+```
 
+The next step is a quick check that this probably is an ELF binary, and not an uninitialized disk.  Bootmain reads the section’s content starting from the disk location off bytes after the start of the ELF header, and writes to memory starting at address paddr. Bootmain calls readseg to load data from disk (9238)  and calls stosb to zero the remainder of the segment (9240).   Stosb (0492)  uses the x86 instruction rep stosb to initialize every byte of a block of memory.
+
+下一步是快速检查这可能是一个ELF二进制文件，而不是一个未初始化的磁盘。Bootmain从ELF头开始后的磁盘位置off字节开始读取部分的内容，并从地址paddr开始写入内存。Bootmain调用readseg从磁盘加载数据(9238)，并调用stosb将段的剩余部分归零(9240)。Stosb(0492)使用x86指令rep stosb初始化内存块的每个字节。
+
+```c
   // Call the entry point from the ELF header.
   // Does not return!
   // elf->entry 是 ELF 文件头中的入口点地址，它指示程序从哪里开始执行。
@@ -116,7 +128,7 @@ readsect(void *dst, uint offset)
 - 多路复用：数据总线和地址总线可复用同一组引脚，通过时钟和控制信号区分功能。
   - 在 PC 电脑（x86 架构） 中，地址总线和数据总线是独立的，各自有专用的物理硬件。
 
-```
+```c
 // Read 'count' bytes at 'offset' from kernel into physical address 'pa'.
 // Might copy more than asked.
 void

@@ -9,6 +9,7 @@
 .set PROT_MODE_DSEG, 0x10        # kernel data segment selector
 .set CR0_PE_ON,      0x1         # protected mode enable flag
 
+# set *start* as entry by command: i386-elf-ld -m elf_i386 -N -e *start* -Ttext 0x7C00 -o obj/boot/boot.out obj/boot/boot.o obj/boot/main.o
 .globl start
 start:
   .code16                     # Assemble for 16-bit mode

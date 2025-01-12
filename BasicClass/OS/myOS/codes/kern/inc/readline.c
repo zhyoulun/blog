@@ -4,6 +4,7 @@
 #define BUFLEN 1024
 static char buf[BUFLEN];
 
+// 读取一行字符到buf中，如果prompt参数有内容，打印用于提示
 char *
 readline(const char *prompt)
 {

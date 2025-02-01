@@ -12,3 +12,4 @@ gdb常用命令：
 
 - [Qemu与GDB调试内核](http://blog.chiyiw.com/2017/04/28/Qemu%E4%B8%8EGDB%E8%B0%83%E8%AF%95%E5%86%85%E6%A0%B8.html)
 - [用 gdb 和 qemu 调试 grub](https://www.cnblogs.com/linuxheik/articles/11398208.html)
+- https://www.youtube.com/watch?v=ktkAlbcoz7o&ab_channel=SamRose

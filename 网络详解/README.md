@@ -262,6 +262,7 @@
   - calico
   - kube-router
   - [Docker 使用Open vSwitch实现跨主机容器连接](chapter-09/09-05.md)
+  - [BGP 如何引流到 Cilium 的 IP 上](chapter-09/09-06.md)
 - 微服务 && service mesh
 - 概念
   - [混杂模式](chapter-10/10-01.md)

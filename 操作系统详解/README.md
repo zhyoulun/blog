@@ -1,11 +1,39 @@
+- 前言
+    - [目标](chapter-00/00-01.md)
+- 操作系统使用体验
+    - xv6
+- 概述
+    - xv6整体架构
+    - 启用流程
+- 关键点：IA-32保护模式内存管理
+    - [内存管理概览](chapter-01/01-16.md)
+    - [保护平面模型](chapter-01/01-17.md)
+    - [物理地址空间](chapter-01/01-18.md)
+    - [逻辑地址和线性地址](chapter-01/01-19.md)
+    - [系统描述符类型](chapter-01/01-20.md)
+    - [分页](chapter-01/01-21.md)
+    - [PAGE TRANSLATION USING 32-BIT PHYSICAL ADDRESSING](chapter-01/01-22.md)
+    - [MAPPING SEGMENTS TO PAGES](chapter-01/01-23.md)
+    - [TRANSLATION LOOKASIDE BUFFERS (TLBS)](chapter-01/01-24.md)
+- 知识附录（这里的信息容忍杂一些，其他部分不行）
+    - [x86系列处理器介绍](chapter-07/07-01.md)
+    - [8086处理器介绍](chapter-07/07-02.md)
+    - [32位x86架构：IA-32介绍](chapter-07/07-03.md)
+    - [使用segment的几种模式](chapter-07/07-04.md)
+- 【【【以下为草稿】】】
+- 计算机组成原理
+    - [总线](chapter-06/06-01.md)
+    - [74244 vs 74245](chapter-06/06-02.md)
 - 汇编基础
 - qemu
     - [qemu安装](chapter-05/05-02.md)
     - [qemu命令](chapter-05/05-01.md)
 - boot
 - 硬件
+    - [硬件核心概念](chapter-04/04-05.md)
     - [8086和80386的寄存器](chapter-04/04-03.md)
     - [inb / outb](chapter-04/04-01.md)
+    - [各个寄存器的作用](chapter-04/04-04.md)
 - 高级硬件
     - [apic](chapter-02/02-04.md)
     - [ioapic](chapter-04/04-02.md)
@@ -17,7 +45,9 @@
     - [switchuvm/swtch/switchkvm](chapter-02/02-06.md)
     - [swtch](chapter-02/02-07.md)
     - [TSS](chapter-02/02-08.md)
+    - [第一个进程initproc是如何运行起来的](chapter-02/02-09.md)
 - 内存虚拟化
+    - [IA-32 CPU内存管理概览](chapter-01/01-03.md)
     - [IDT/GDT/LDT规范](chapter-01/01-06.md)
     - [IDT数据结构](chapter-01/01-12.md)
     - [GDT数据结构](chapter-01/01-13.md)
@@ -25,7 +55,6 @@
     - [lidt指令](chapter-01/01-11.md)
     - [lgdt指令](chapter-01/01-08.md)
     - [内存虚拟化](chapter-01/01-01.md)
-    - [内存管理概览](chapter-01/01-03.md)
     - [PAGING (VIRTUAL MEMORY)概览](chapter-01/01-02.md)
     - [CONTROL REGISTERS](chapter-01/01-04.md)
     - [xv6中内存管理相关代码分析](chapter-01/01-05.md)
@@ -39,11 +68,15 @@
 
 ## 参考
 
-- 24201606-Multiprocessor Specification.pdf
 - 24547212 - IA-32 Intel® Architecture Software Developer's Manual.pdf
-- xv6 2018
-- linux 0.11
+- Programming from the Ground Up, Jonathan Bartlett
 - 操作系统导论，雷姆兹
-- Linux内核完全注释，赵炯
-- ProgrammingGroundUp-1-0-booksize.pdf
+- 操作系统
+    - xv6 2018
+    - linux 0.11
+    - minix 2.0.4
 
+待定列入参考清单：
+
+- 24201606 - Multiprocessor Specification.pdf
+- Linux内核完全注释，赵炯

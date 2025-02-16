@@ -5,11 +5,11 @@
 - 概述
     - xv6整体架构
     - 启用流程
-- 关键点：系统架构概览
-    - [OVERVIEW OF THE SYSTEM-LEVEL ARCHITECTURE](chapter-12/12-01.md)
-    - [MODES OF OPERATION](chapter-12/12-02.md)
-    - [SYSTEM FLAGS AND FIELDS IN THE EFLAGS REGISTER](chapter-12/12-03.md)
-    - [MEMORY-MANAGEMENT REGISTERS](chapter-12/12-04.md)
+- 关键点：系统级架构概览
+    - [系统级架构概览](chapter-12/12-01.md)
+    - [操作模式列表](chapter-12/12-02.md)
+    - [EFLAGS寄存器中的系统FLAGS和FIELDS](chapter-12/12-03.md)
+    - [内存管理相关寄存器](chapter-12/12-04.md)
     - [CONTROL REGISTERS](chapter-12/12-05.md)
     - [SYSTEM INSTRUCTION SUMMARY](chapter-12/12-06.md)
 - 关键点：IA-32保护模式内存管理
@@ -50,9 +50,9 @@
     - [IDT DESCRIPTORS](chapter-08/08-11.md)
     - [EXCEPTION AND INTERRUPT HANDLING](chapter-08/08-12.md)
     - [ERROR CODE](chapter-08/08-13.md)
-- 关键点：TASK MANAGEMENT
-    - [TASK MANAGEMENT OVERVIEW](chapter-09/09-01.md)
-    - [TASK MANAGEMENT DATA STRUCTURES](chapter-09/09-02.md)
+- 关键点：任务管理
+    - [任务管理概览](chapter-09/09-01.md)
+    - [任务管理数据结构](chapter-09/09-02.md)
     - [TASK SWITCHING](chapter-09/09-03.md)
     - [TASK LINKING](chapter-09/09-04.md)
     - [TASK ADDRESS SPACE](chapter-09/09-05.md)
@@ -67,7 +67,7 @@
     - [SYSTEM BUS VS. APIC BUS](chapter-11/11-02.md)
     - [RELATIONSHIP BETWEEN THE INTEL 82489DX EXTERNAL APIC, THE APIC, AND THE XAPIC](chapter-11/11-03.md)
     - [LOCAL APIC](chapter-11/11-04.md)
-    - [HANDLING LOCAL INTERRUPTS](chapter-11/11-05.md)
+    - [处理本地中断](chapter-11/11-05.md)
     - [ISSUING INTERPROCESSOR INTERRUPTS](chapter-11/11-06.md)
     - [SYSTEM AND APIC BUS ARBITRATION](chapter-11/11-07.md)
     - [HANDLING INTERRUPTS](chapter-11/11-08.md)
@@ -78,6 +78,7 @@
     - [x86系列处理器介绍](chapter-07/07-01.md)
     - [8086处理器介绍](chapter-07/07-02.md)
     - [32位x86架构：IA-32介绍](chapter-07/07-03.md)
+    - [x86处理器演进明细](chapter-07/07-05.md)
     - [使用segment的几种模式](chapter-07/07-04.md)
 - 【【【以下为草稿】】】
 - 计算机组成原理
@@ -132,9 +133,13 @@
 - 操作系统导论，雷姆兹
 - 操作系统
     - xv6 2018
+        - https://github.com/zhyoulun/xv6-public
     - linux 0.11
+        - https://github.com/zhyoulun/Linux-0.11
     - minix 2.0.4
-
+        - https://github.com/zhyoulun/old-minix
+    - elks
+        - https://github.com/zhyoulun/elks
 待定列入参考清单：
 
 - 24201606 - Multiprocessor Specification.pdf

@@ -149,6 +149,7 @@
       - [nc](chapter-04/04-25.md)
       - [polipo](chapter-04/04-26.md)
       - [ping](chapter-04/04-27.md)
+      - [mtr](chapter-04/04-48.md)
       - [route](chapter-04/04-28.md)
       - [ssh](chapter-04/04-29.md)
       - [tcconfig](chapter-04/04-30.md)
@@ -168,6 +169,7 @@
       - iftop
       - /proc/net
       - stress
+      - [asn tool](chapter-04/04-47.md)
       - MAC环境
         - [netstat](chapter-04/04-34/04-34-01.md)
 - lvs
@@ -270,7 +272,12 @@
   - [中国骨干网](chapter-10/10-03.md)
   - [SDN](chapter-10/10-04.md)
   - [AS](chapter-10/10-05.md)
+  - [两个AS连接方式](chapter-10/10-11.md)
   - [IXP](chapter-10/10-06.md)
+  - [IXP历史](chapter-10/10-07.md)
+  - [peeringdb](chapter-10/10-09.md)
+  - [IRR](chapter-10/10-08.md)
+  - [Looking Glass（网络窥镜）](chapter-10/10-10.md)
 - 性能
 - 安全
   - 防火墙

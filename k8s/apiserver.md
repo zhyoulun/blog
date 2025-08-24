@@ -148,8 +148,6 @@ curl --cert admin.pem --key admin-key.pem --cacert ./ca.pem -v https://192.168.5
 curl --cert admin.pem --key admin-key.pem --cacert ./ca.pem -i https://192.168.56.101:6443/api/v1
 ```
 
-
-
 ## 参考
 
 - [05-2. 部署 kube-apiserver 集群](https://github.com/opsnull/follow-me-install-kubernetes-cluster/blob/master/05-2.apiserver%E9%9B%86%E7%BE%A4.md)

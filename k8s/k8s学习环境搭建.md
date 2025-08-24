@@ -82,6 +82,27 @@ state = "/data/k8s/containerd/state"
     shim_debug = false
 ```
 
+## 开发
+
+k8s 1.14需要使用go 1.12.9的版本
+
+运行apiserver命令：
+
+```
+sudo GO111MODULE=on ~/software/go1.12.9/bin/go run -mod=vendor apiserver.go 
+```
+
+启动调试用的etcd
+
+```
+docker run -d --name etcd-server \
+    --publish 2379:2379 \
+    --publish 2380:2380 \
+    --env ALLOW_NONE_AUTHENTICATION=yes \
+    --env ETCD_ADVERTISE_CLIENT_URLS=http://0.0.0.0:2379 \
+    bitnami/etcd:latest
+```
+
 
 参考：
 - https://github.com/dotless-de/vagrant-vbguest/issues/56
